@@ -1,0 +1,66 @@
+#quiz 2
+#q1-a
+curl https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/
+chapter-10-shell-programming--triplet-stop.sh >triplet.sh
+# The URL is which you have copied from the website.
+# The script now is named as triplet.sh
+cat triplet.sh
+
+#q1-b
+vi triplet.sh
+
+#content in editor shows below
+#!/bin/bash
+# save as triplet.sh
+# splits a sequence into triplets
+x=0
+while [ -n "${1:$x:3}" ]; do
+seq=$seq${1:$x:3}" "
+x=$(expr $x + 3)
+if [ ${1:$x:3} == taa ] && [ $x -gt 9 ]; then
+break
+fi
+done
+echo "$seq"
+
+chmod u+x triplet.sh
+./triplet.sh ccciiitaalllwwweeetaakkkooo
+./triplet.sh ccctaataallltaawww
+./triplet.sh aataaataaattaattaa
+
+#q2-a
+ls
+cat tutes.txt
+
+#q2-b
+uniq -u tutes.txt
+
+#q3
+#creat test file
+vim q3.txt
+
+#input content shows below, copy and paste in the editor or directly download q3.txt from my Github account.
+hydrogenase search pattern
+hydrogenase dehydrogenase expression three space
+dehydrogenase 127064 Length
+126 -639 -127 Length (aa): 141
+ssr0390: photosystem
+Init: 156 -391
+-156 Length (aa): 86
+#save and exit
+
+cat q3.txt
+
+#q3-a
+egrep "^[^ ]+ [^ ]+ [^ ]+$" q3.txt
+
+#q3-b
+egrep "\-[0-9]*" q3.txt
+
+#q3-c
+egrep "\s+[0-9]+\s|\s+\-[0-9]+\s" q3.txt
+
+#q3-d
+egrep -e 'hydrogenase' q3.txt | egrep -v 'dehydrogenase' q3.txt
+
+
