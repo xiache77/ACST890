@@ -1,0 +1,7 @@
+hydrogenase search pattern
+hydrogenase dehydrogenase expression three space
+dehydrogenase 127064 Length
+126 -639  -127 Length (aa): 141
+ssr0390: photosystem
+Init: 156 -391 
+-156 Length (aa): 86
