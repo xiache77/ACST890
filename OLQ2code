@@ -1,9 +1,7 @@
 #Q1
-curl http://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb > structure.pdb
+curl https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb > structure.pdb
 ls
 cat str*pdb
-egrep Beisel st*pdb
-egrep Weisel st*pdb
 sed 's/Beisel/Weisel/g' str*pdb
 
 #Q2
