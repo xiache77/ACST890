@@ -1,0 +1,35 @@
+#Q1
+curl http://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb > structure.pdb
+ls
+cat str*pdb
+egrep Beisel st*pdb
+egrep Weisel st*pdb
+sed 's/Beisel/Weisel/g' str*pdb
+
+#Q2
+sed '1,3d' str*pdb
+
+#Q3
+sed -n '5,10p' str*pdb
+
+#Q4
+egrep MET st*pdb
+sed '/MET/d' str*pdb
+
+#Q5
+sed -n '/HELIX.*ILE/p' st*pdb
+
+#Q6
+sed '/^H/s/$/***/' st*pdb
+
+#Q7
+cat st*pdb
+sed '/SEQRES/c\SEQ' st*pdb
+
+#Q8
+scp -i *pem jabberwocky.txt ubuntu@ec2-13-211-71-147.ap-southeast-2.compute.amazonaws.com:
+#login your AWS
+ls jab*txt
+wc -l jab*txt
+sed -i '/^\s$/d' jab*txt
+wc -l jab*txt
