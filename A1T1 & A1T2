@@ -8,14 +8,14 @@ sed -i "s/Huck/HucK/g" twain.txt
 egrep -o Huck twain.txt |wc -l
 egrep -o HucK twain.txt |wc -l
 
-#q2
+#q2 in Linux
 python3 userargument.py python
 python3 userargument.py @!&^%
 python3 userargument.py Bob
 userargument.py Bob
 python3 userargument.py Alice Bob
 
-#q3
+#q3 in python
 y=int(input("year = "))
 if y % 4 ==0:
     if y % 100 ==0:
